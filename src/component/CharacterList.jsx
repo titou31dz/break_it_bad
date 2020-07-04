@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import BrkContext from "../context/brkContext";
 import CharacterCard from "./CharacterCard";
+import { Link } from "react-router-dom";
 
 const CharacterList = () => {
   const { loading, characters, getCharacters } = useContext(BrkContext);
@@ -16,9 +17,13 @@ const CharacterList = () => {
       {loading ? (
         <div>loading...</div>
       ) : (
-        charactersMini.map((character) => (
-          <CharacterCard key={character.char_id} character={character} />
-        ))
+        <>
+          {charactersMini.map((character) => (
+            <CharacterCard key={character.char_id} character={character} />
+          ))}
+
+          <Link to="/all_characters">show all</Link>
+        </>
       )}
     </div>
   );
