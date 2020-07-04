@@ -9,14 +9,14 @@ const CharacterList = () => {
     getCharacters();
   }, []);
 
-  console.log(characters[0]);
+  const charactersMini = characters.slice(0, 9);
 
   return (
-    <div className="container grid-list">
+    <div className="grid-list">
       {loading ? (
         <div>loading...</div>
       ) : (
-        characters.map((character) => (
+        charactersMini.map((character) => (
           <CharacterCard key={character.char_id} character={character} />
         ))
       )}
