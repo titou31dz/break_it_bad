@@ -22,11 +22,14 @@ const BrkProvider = (props) => {
     }
   };
 
+  const charactersMin = state.characters.slice(0, 9);
+
   return (
     <BrkContext.Provider
       value={{
         loading: state.loading,
         characters: state.characters,
+        charactersMin,
         getCharacters,
       }}
     >

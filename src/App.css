@@ -85,3 +85,35 @@
 .card-info {
   height: 20%;
 }
+
+.show-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 5px 0px;
+}
+.show-all a {
+  text-decoration: none;
+  color: rgb(7, 105, 81);
+  font-size: 1.5rem;
+  padding: 10px 20px;
+}
+.show-all a:hover {
+  color: white;
+  background-color: rgb(7, 105, 81);
+  border-radius: 5px;
+}
+
+/*-----------------------------media-----------------------------*/
+@media (max-width: 800px) {
+  .grid-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid-list {
+    grid-template-columns: 1fr;
+  }
+}
