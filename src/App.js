@@ -4,9 +4,9 @@ import CharacterList from "./component/CharacterList";
 
 const App = () => {
   return (
-    <div>
+    <>
       <CharacterList />
-    </div>
+    </>
   );
 };
 

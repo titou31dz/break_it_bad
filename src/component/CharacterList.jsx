@@ -1,19 +1,23 @@
 import React, { useContext, useEffect } from "react";
 import BrkContext from "../context/brkContext";
+import CharacterCard from "./CharacterCard";
 
 const CharacterList = () => {
   const { loading, characters, getCharacters } = useContext(BrkContext);
+
   useEffect(() => {
     getCharacters();
   }, []);
-  console.log(characters);
+
+  console.log(characters[0]);
+
   return (
-    <div>
+    <div className="container grid-list">
       {loading ? (
         <div>loading...</div>
       ) : (
         characters.map((character) => (
-          <div key={character.char_id}>{character.name}</div>
+          <CharacterCard key={character.char_id} character={character} />
         ))
       )}
     </div>
